@@ -1,0 +1,7 @@
+.idea
+src/vendor
+src/vendor/*
+docker/logs
+docker/logs/*
+docker/db/data
+docker/db/data/*
