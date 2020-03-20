@@ -6,7 +6,7 @@ php:
 sudo: false
 
 install:
-  - composer install -d ./src
+  - composer install -o -d ./src
 
 script:
   - ./src/bin/phpunit
