@@ -9,5 +9,5 @@ install:
   - composer update -d ./src
 
 script:
-  - ./src/vendor/bin/phpunit
-  - ./src/vendor/bin/phpcs ./src
+  - ./src/bin/phpunit
+  - ./src/vendor/bin/phpcs ./src/src

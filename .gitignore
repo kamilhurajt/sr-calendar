@@ -5,3 +5,4 @@ docker/logs
 docker/logs/*
 docker/db/data
 docker/db/data/*
+.phpunit.result.cache
