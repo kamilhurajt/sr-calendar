@@ -6,8 +6,9 @@ php:
 sudo: false
 
 install:
-  - composer update -d ./src
+  - composer install -o -d ./src
+  - chmod 766 ./src/bin -R
 
 script:
-  - ./src/vendor/bin/phpunit
-  - ./src/vendor/bin/phpcs ./src
+  - ./src/bin/phpunit
+  - ./src/vendor/bin/phpcs ./src/src
