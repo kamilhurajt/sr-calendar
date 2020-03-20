@@ -10,4 +10,4 @@ install:
 
 script:
   - ./src/vendor/bin/phpunit
-  - ./src/vendor/bin/phpcs
+  - ./src/vendor/bin/phpcs ./src
