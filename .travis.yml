@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - 7.2
+
+sudo: false
+
+install:
+  - composer update -d ./src
+
+script:
+  - ./src/vendor/bin/phpunit
+  - ./src/vendor/bin/phpcs
