@@ -7,6 +7,7 @@
     <exclude-pattern>/vendor/*</exclude-pattern>
     <exclude-pattern>Kernel.php</exclude-pattern>
 
+
     <rule ref="Generic.Classes.DuplicateClassName"/>
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
     <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
@@ -31,8 +32,6 @@
     <rule ref="Generic.PHP.ForbiddenFunctions"/>
     <rule ref="Generic.PHP.LowerCaseConstant"/>
     <rule ref="Generic.PHP.NoSilencedErrors"/>
-    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
-    <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
     <rule ref="MySource.PHP.EvalObjectFactory"/>
     <rule ref="PEAR.Classes.ClassDeclaration"/>
     <rule ref="PEAR.Commenting.InlineComment"/>
@@ -58,11 +57,6 @@
     <rule ref="Squiz.Scope.StaticThisUsage"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>
-    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
-        <properties>
-            <property name="spacing" value="1"/>
-        </properties>
-    </rule>
     <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
     <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
