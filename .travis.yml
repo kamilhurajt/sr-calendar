@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 7.3
+
+sudo: false
+
+install:
+  - composer install -o -d ./src
+  - chmod 766 ./src/bin -R
+
+script:
+  - ./src/bin/phpunit
+  - ./src/vendor/bin/phpcs ./src/src
