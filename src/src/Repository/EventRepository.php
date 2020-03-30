@@ -17,7 +17,8 @@ class EventRepository extends EntityRepository implements RepositoryInterface
     public function save(array $data, $id = null)
     {
         // create entity & persist data
-        $event = Event::create(
+        $event = Event::createForUpdate(
+            $id,
             $data['name'],
             $data['city'],
             $data['start_date'],

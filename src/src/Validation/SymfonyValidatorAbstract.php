@@ -3,14 +3,14 @@
 
 namespace Sr\Validation;
 
-
 use Symfony\Component\Validator\Constraints\Collection;
 use Symfony\Component\Validator\Constraints\GroupSequence;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validation;
 
 /**
- * Abstract implementation of validator for symfony to decoule framework parts and add possibility to replace framework
+ * Abstract implementation of validator for symfony to decoule framework
+ * parts and add possibility to replace framework
  *
  * Class SymfonyValidatorAbstract
  * @package Sr\Validation
@@ -30,7 +30,11 @@ abstract class SymfonyValidatorAbstract implements ValidatorInterface
     {
         $validator = Validation::createValidator();
 
-        $result = $validator->validate($data, $this->getValidationCollection(), $this->getGroup());
+        $result = $validator->validate(
+            $data,
+            $this->getValidationCollection(),
+            $this->getGroup()
+        );
 
         if ($result->count() > 0) {
             $this->setErrors($result);
@@ -56,6 +60,9 @@ abstract class SymfonyValidatorAbstract implements ValidatorInterface
         return $errors;
     }
 
+    /**
+     * @param ConstraintViolationList $list
+     */
     protected function setErrors(ConstraintViolationList $list)
     {
         foreach($list as $error) {

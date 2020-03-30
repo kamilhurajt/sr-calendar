@@ -129,9 +129,17 @@ class Event
     /**
      * @return string
      */
-    protected function getCity(): string
+    public function getCity(): string
     {
         return $this->city;
+    }
+
+    /**
+     * @param int $id
+     */
+    protected function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
     /**
@@ -183,9 +191,43 @@ class Event
      * @return Event
      * @throws \Exception
      */
-    public static function create(string $name, string $city, string $startDate, string $userPassword, string $description = null)
-    {
+    public static function create(
+        string $name,
+        string $city,
+        string $startDate,
+        string $userPassword,
+        string $description = null
+    ) {
         $entity = new self();
+        $entity->setCity($city);
+        $entity->setName($name);
+        $entity->setStartDate(new \DateTime($startDate));
+        $entity->setUserPassword($userPassword);
+        $entity->setDescription($description);
+
+        return $entity;
+    }
+
+    /**
+     * @param int $id
+     * @param string $name
+     * @param string $city
+     * @param string $startDate
+     * @param string $userPassword
+     * @param string|null $description
+     * @return Event
+     * @throws \Exception
+     */
+    public static function createForUpdate(
+        int $id,
+        string $name,
+        string $city,
+        string $startDate,
+        string $userPassword,
+        string $description = null
+    ) {
+        $entity = new self();
+        $entity->setId($id);
         $entity->setCity($city);
         $entity->setName($name);
         $entity->setStartDate(new \DateTime($startDate));

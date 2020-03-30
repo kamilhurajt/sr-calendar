@@ -28,15 +28,17 @@ class EventService
     public function __construct(
         RepositoryInterface $eventRepository,
         ValidatorInterface $eventValidator
-    ) {
+    )
+    {
         $this->eventRepository = $eventRepository;
-        $this->eventValidator = $eventValidator;
+        $this->eventValidator  = $eventValidator;
     }
 
     /**
      * @param array $data
      *
-     * @return array|Event returns entity on success array on failure with errors
+     * @return array|Event returns entity on success
+     * array on failure with errors
      * @throws \Doctrine\ORM\ORMException
      */
     public function createEvent(array $data)
@@ -53,7 +55,8 @@ class EventService
     /**
      * @param array $data
      * @param $id
-     * @return array|Event returns entity on success array on failure with errors
+     * @return array|Event returns entity on success
+     * array on failure with errors
      * @throws \Exception
      */
     public function updateEvent(array $data, $id)
@@ -78,7 +81,8 @@ class EventService
     /**
      * @param $id
      * @param $password
-     * @return array|bool array|bool returns true on success array on failure with errors
+     * @return array|bool array|bool returns true on success
+     * array on failure with errors
      */
     public function removeEvent($id, $password)
     {
